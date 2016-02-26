@@ -1,0 +1,5 @@
+#!/usr/bin/env perl
+{
+    secrets => [$ENV{OPENCLOSET_SECRET} || 'opencloset'],
+    cookie_domain => $ENV{OPENCLOSET_DOMAIN} || 'localhost' || '.theopencloset.net',
+};
