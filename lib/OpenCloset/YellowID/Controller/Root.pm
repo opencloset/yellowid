@@ -56,14 +56,14 @@ sub create_friend {
 =head2 delete_friend
 
     # friend.delete
-    DELETE /friend
+    DELETE /friend/:user_key
 
 =cut
 
 sub delete_friend {
-    my $self = shift;
+    my $self     = shift;
+    my $user_key = $self->param('user_key');
 
-    my $user_key = $self->param('user_key') || '';
     $self->log->debug($user_key);
 
     $self->render( json => {} );

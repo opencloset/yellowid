@@ -34,7 +34,7 @@ sub _public_routes {
     $r->get('/keyboard')->to('root#keyboard')->name('keyboard');
     $r->post('/message')->to('root#create_message')->name('message.create');
     $r->post('/friend')->to('root#create_friend')->name('friend.create');
-    $r->delete('/friend')->to('root#delete_friend')->name('friend.delete');
+    $r->delete('/friend/:user_key')->to('root#delete_friend')->name('friend.delete');
     $r->delete('/chat_room/:user_key')->to('root#quit_room')->name('room.quit');
 }
 
