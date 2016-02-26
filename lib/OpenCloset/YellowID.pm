@@ -13,6 +13,7 @@ sub startup {
     my $self = shift;
 
     $self->plugin('Config');
+    $self->plugin('OpenCloset::YellowID::Plugin::Helpers');
 
     $self->secrets( $self->config->{secrets} );
     $self->sessions->cookie_name('opencloset');
