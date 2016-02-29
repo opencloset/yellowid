@@ -13,6 +13,8 @@ use Mojo::Base 'Mojolicious::Controller';
 sub keyboard {
     my $self = shift;
 
+    $self->log->debug( $self->req->headers->to_string );
+
     $self->render( json => { type => 'buttons', buttons => ['선택1', '선택2', '선택3'] } );
 }
 
@@ -25,6 +27,8 @@ sub keyboard {
 
 sub create_message {
     my $self = shift;
+
+    $self->log->debug( $self->req->headers->to_string );
 
     my $user_key = $self->param('user_key') || '';
     my $type     = $self->param('type')     || '';
